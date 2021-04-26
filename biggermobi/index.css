@@ -1,0 +1,129 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.w {
+  margin: 0 auto;
+  width: 1692px;
+  font-family: 'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+/* 头部信息 */
+.topText {
+  width: 1692px;
+  height: 207px;
+  background-color: rgba(75, 137, 240, 0.831372549019608);
+  margin: 128px auto 0;
+  padding: 25px 50px 0 50px;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+.topText :first-child {
+  font-size: 41px;
+  margin-bottom: 25px;
+}
+.topText :last-child {
+  font-size: 26px;
+  line-height: 32px;
+}
+/* 中间信息 */
+.middleMessage {
+  height: 670px;
+  margin-top: 10px;
+}
+.middle-img {
+  float: left;
+  height: 580px;
+  margin-top: 55px;
+}
+.middle-right {}
+.middle-item {
+  margin-bottom: 50px;
+}
+.right-top {
+  font-size: 20px;
+  color: #4B89F0;
+  margin-bottom: 5px;
+}
+.right-bottom {
+  font-size: 18px;
+  color: #333333;
+  line-height: 20px;
+}
+/* 底部信息 */
+.bottom-left {
+  float: left;
+  font-size: 20px;
+  margin-top: 170px;
+  color: #000000;
+}
+.bottom-right {
+  float: right;
+}
+.bottom-left p {
+  margin-bottom: 30px;
+}
+
+/* 底部按钮 */
+.footer {
+  margin-top: 100px;
+  float: left;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+.footer a {
+  display: inline-block;
+  width: 230px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 40px;
+  background-color: rgba(75, 137, 240, 0.831372549019608);
+  font-size: 30px;
+  color: #ffffff;
+  border: none;
+}
