@@ -41,7 +41,7 @@
                             <a href="javascript:void(0);" maoTarget="#partner">合作伙伴</a>
                         </li>
                     </ul>
-                    <a href="javascript:;" class="contact" maoTarget="#contectUs1">
+                    <a href="javascript:;" class="contact" maoTarget="#contectUs">
                         联系我们
                     </a>
                 </div>
@@ -94,12 +94,11 @@
                 </div>
             </div>
             <div class="becomeAdusers">
-                <span>想要成为我们的广告主请在</span>
+                <p>想要成为我们的广告主请</p>
                 <a href="javascript:;" maoTarget="#contectUs">
                     联系我们
+                    <img src="./images/arrow-pull.png">
                 </a>
-                <img src="./images/arrow-pull.png">
-                <span>处选择</span>
             </div>
             <div class="gaussian"></div>
         </div>
@@ -177,73 +176,14 @@
         </div>
         <!-- 联系信息 -->
         <div class="formItem" id="contectUs">
-            <p class="formItem-top" id="contectUs1">填写以下详细信息，以开始您与我们之间的用户获取/获利关系</p>
-            <form class="layui-form" action="">
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <input type="text" name="title" required lay-verify="required" placeholder="公司名称"
-                            autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-input-block myForm-item inlineBlock marginRight23">
-                        <input type="text" name="userName" required lay-verify="required" placeholder="姓名"
-                            autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-input-block myForm-item inlineBlock">
-                        <input type="text" name="email" required lay-verify="required" placeholder="电子邮件"
-                            autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-input-block myForm-item inlineBlock marginRight23">
-                        <input type="text" name="region" required lay-verify="required" placeholder="您位于哪个地区"
-                            autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-form-block myForm-item inlineBlock">
-                        <div class="layui-input-block">
-                            <select name="hasApp" lay-verify="required">
-                                <option value="">你有应用程序吗？</option>
-                                <option value="有">有</option>
-                                <option value="无">无</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="layui-form-block">
-                        <div class="layui-input-block" id="highLight">
-                            <select name="wishToBeAdv" lay-verify="required">
-                                <option value="">您是否愿意成为我们的广告主？</option>
-                                <option value="0">是</option>
-                                <option value="1">否</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="layui-form-block">
-                        <div class="layui-input-block">
-                            <select name="useTracker" lay-verify="required">
-                                <option value="">您目前是否使用手机应用归类追踪器？</option>
-                                <option value="是">是的</option>
-                                <option value="否">不</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="layui-input-block myForm-item inlineBlock marginRight23">
-                        <input type="text" name="appLink" placeholder="APP链接（已选择）" autocomplete="off"
-                            class="layui-input">
-                        <span class="notRequired">非必填</span>
-                    </div>
-                    <div class="layui-input-block myForm-item inlineBlock">
-                        <input type="text" id="code_input" name="verificationCode" required lay-verify="required"
-                            placeholder="验证码" autocomplete="off" class="layui-input">
-                        <div id="v_container"></div>
-                    </div>
-                     <!-- 需要收集的字段，按从左到右的顺序-->
-                    <input type="hidden" name="headers" placeholder="" required value="title,userName,email,region,hasApp,wishToBeAdv,useTracker,appLink">
-                    <!-- 表格id-->
-                    <!-- 在使用前请创建好表格并将id写入value的值中-->
-                    <input type="hidden" name="spreadsheetAppId" value="1gAzOQRG1FNVsuJ3HhbkuQ5GMmdl-tw_mZI34TYu5bpY">
-
-                    <div class="contactUs">
-                        <button lay-submit lay-filter="formDemo" id="contact_us">联系我们</button>
-                    </div>
-                </div>
-            </form>
+            <!-- <p class="formItem-top" id="contectUs1">填写以下详细信息，以开始您与我们之间的用户获取/获利关系</p> -->
+            <div class="formItem-left">
+                <p>开始突破在线广告的局限</p>
+                <p>我们的使命是使用最新的专有技术来提供最高质量的流量，从而突破在线广告的局限</p>
+            </div>
+            <div class="contactUs">
+                <a target="_blank" href="mailto:support@19mobigroup.com">联系我们</a>
+            </div>
         </div>
         <!-- 底部信息 -->
         <div class="footer">
@@ -266,43 +206,37 @@
     </div>
 </body>
 <script>
-    layui.use('form', function () {
-        let form = layui.form;
-        let verifyCode = new GVerify("v_container");
-        //监听提交
-        form.on('submit(formDemo)', function (data) {
-            let res = verifyCode.validate(data.field.verificationCode);
-            if (res) {
-                //layer.msg(JSON.stringify(data.field));
-                fetch("https://script.google.com/macros/s/AKfycbwPZI3gJpYz9_VSw7sGy-cAOdAxJXKS3gDywPwTimQ3ml06MhJPGvxT7nDhrqbJRc_C/exec", {
-                    mode: 'no-cors',
-                    method: 'POST',
-                    body: JSON.stringify(data.field),
-                    credentials: 'include',
-                    redirect: 'follow',
-                }).then(response => {
-                    layer.msg('Success')
-                    return false
-                })
-            } else {
-                layer.msg('请输入正确的验证码')
-                document.getElementById("code_input").value = ''
-            }
-            return false;
-        });
-    });
+    // layui.use('form', function () {
+    // let form = layui.form;
+    // let verifyCode = new GVerify("v_container");
+    //监听提交
+    // form.on('submit(formDemo)', function (data) {
+    //     let res = verifyCode.validate(data.field.verificationCode);
+    //     if (res) {
+    //         //layer.msg(JSON.stringify(data.field));
+    //         fetch("https://script.google.com/macros/s/AKfycbzGVc8E5xOP9JLLysD3N9A9br9OiLfeSO5iTeHANakA4y1ojw75VpOCBkJ4dZVwJb3H/exec", {
+    //             mode: 'no-cors',
+    //             method: 'POST',
+    //             body: JSON.stringify(data.field),
+    //             credentials: 'include',
+    //             redirect: 'follow',
+    //         }).then(response => {
+    //             layer.msg('Success')
+    //             return false
+    //         })
+    //     } else {
+    //         layer.msg('请输入正确的验证码')
+    //         document.getElementById("code_input").value = ''
+    //     }
+    //     return false;
+    // });
+    // });
     /*
     *锚点点击跳转
     */
     var $ = layui.jquery; //不是layui里就不用这句
     $('body').on('click', 'a', function () {
         var maoTarget = $(this).attr('maoTarget');
-        if (maoTarget === '#contectUs') {
-            $('#highLight input').addClass('activeInput')
-            setTimeout(function () {
-                $('#highLight input').removeClass('activeInput')
-            }, 1500)
-        }
         if (maoTarget) {
             $(maoTarget).eq(0)[0].scrollIntoView({
                 behavior: 'smooth'
